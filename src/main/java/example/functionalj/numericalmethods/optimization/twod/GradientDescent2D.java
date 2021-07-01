@@ -85,8 +85,8 @@ public class GradientDescent2D {
         
         System.out.printf("Calculation time: %d ms\n", System.currentTimeMillis() - startTime);
         
-        var xData = IntFuncList.wholeNumbers(iterations.size()).mapToDouble().toArray();
-        var yData = iterations.mapToDouble(theIteration.fxy).toArray();
+        var xData = IntFuncList.wholeNumbers(iterations.size()).mapToDouble().boxed();
+        var yData = iterations.mapToDouble(theIteration.fxy).boxed();
         
         XYChart chart = QuickChart.getChart("Gradient Descent 2D", "iteration", "f", "f", xData, yData);
         new SwingWrapper<>(chart).displayChart();
