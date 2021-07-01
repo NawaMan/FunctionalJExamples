@@ -19,28 +19,27 @@ class Trapezoidal {
     
     @Test
     void testTrapezoidalRule() {
-        var function   = (Func) ((x) -> 3 + 2 * pow(x, 2) - pow(x, 3) + pow(2, x) - exp(-x));
+        var function   = (Func)((x) -> 3 + 2 * pow(x, 2) - pow(x, 3) + pow(2, x) - exp(-x));
         var startX     = -1.0;
-        var stopX      = 3.0;
+        var stopX      =  3.0;
         var actualArea = 18.81838;
         
-        var logs       = newListBuilder(String.class);
-        for (var segment : listOf(1, 2, 4, 8, 16, 200)) {
-            var stepSize = (stopX - startX) / segment;
+        var resultLogs = newListBuilder(String.class);
+        for (var segmentCount : listOf(1, 2, 4, 8, 16, 200)) {
+            var stepSize = (stopX - startX) / segmentCount;
             var xs       = StartAt(startX).step(stepSize).dropAfter(x -> x >= stopX);
             var ys       = xs.map(function);
-            var area     = ys.mapTwo((value1, value2) -> (value1 + value2) * stepSize / 2).sum();
+            var area     = ys.mapTwo((y1, y2) -> (y1 + y2) * stepSize / 2).sum();
             var error    = abs((actualArea - area) / actualArea) * 100;
-            logs.add(format("n = %d, I_%d = %f, error = %f%%\n", segment, segment, area, error));
+            resultLogs.add(format("n = % 4d, Area = %10.7f, error = %10.7f%%\n", segmentCount, area, error));
         }
-        assertEquals(
-                      "n = 1, I_1 = 11.463862, error = 39.081567%\n"
-                    + "n = 2, I_2 = 16.996172, error = 9.683128%\n"
-                    + "n = 4, I_4 = 18.362751, error = 2.421192%\n"
-                    + "n = 8, I_8 = 18.704443, error = 0.605457%\n"
-                    + "n = 16, I_16 = 18.789897, error = 0.151359%\n"
-                    + "n = 200, I_200 = 18.818202, error = 0.000944%\n",
-                    logs.build().join());
+        assertEquals("n =    1, Area = 11.4638622, error = 39.0815670%\n"
+                   + "n =    2, Area = 16.9961722, error =  9.6831278%\n"
+                   + "n =    4, Area = 18.3627508, error =  2.4211923%\n"
+                   + "n =    8, Area = 18.7044427, error =  0.6054574%\n"
+                   + "n =   16, Area = 18.7898966, error =  0.1513594%\n"
+                   + "n =  200, Area = 18.8182024, error =  0.0009438%\n",
+                    resultLogs.build().join());
     }
     
 }
