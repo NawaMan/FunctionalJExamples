@@ -13,6 +13,7 @@ import functionalj.function.Func1;
 import functionalj.types.Struct;
 
 
+/** Data contains in an iteration. **/
 @Struct
 interface IterationSpec {
     double x();
@@ -20,14 +21,16 @@ interface IterationSpec {
     double dfx();
 }
 
+/** Function that has diff. */
 interface DoubleFunc extends Func1<Double, Double> {
-    default DiffertiableFunc withDiff(DoubleFunc diff) {
-        return new DiffertiableFunc(this, diff);
+    default DifferentiableFunc withDiff(DoubleFunc diff) {
+        return new DifferentiableFunc(this, diff);
     }
 }
 
+/** Differentiable function */
 @Struct
-interface DiffertiableFuncSpec extends Func1<Double, Iteration> {
+interface DifferentiableFuncSpec extends Func1<Double, Iteration> {
     DoubleFunc func();
     DoubleFunc diff();
     
@@ -46,8 +49,8 @@ class NewtonRaphsonMethod {
         var maxLoop      = 1000;
         var learningRate = 0.05;
         
-        var func     = (DoubleFunc) (x -> 1*x*x*x - 1*x*x       - 1);
-        var function = func.withDiff(x ->           3*x*x - 2*x    );
+        var function = ((DoubleFunc)(x -> 1*x*x*x - 1*x*x - 1))
+                           .withDiff(x -> 3*x*x   - 2*x   + 0);
         
         var iteration0     = $(function, x0);
         var newtonUpdate   = f((Iteration it) -> it.x - it.fx / it.dfx);

@@ -35,7 +35,7 @@ import functionalj.map.FuncMap;
 import functionalj.types.Struct;
 
 
-class StructLensExample {
+class StructLensExamples {
     
     @Struct
     void Personel(int id, String firstName, String lastName, double salary, boolean isOnSite) {}
