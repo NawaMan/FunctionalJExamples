@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d005db26-2b4e-4870-a6e2-1698029899ab" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ugJIt1nNd0IrEYYDicDJZaKFSJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="JUnit.FuncListTest">
+    <configuration name="All in UseFunctionalJMaven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UseFunctionalJMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UseFunctionalJMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use.functionalj.maven.list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use.functionalj.maven.list" />
+      <option name="MAIN_CLASS_NAME" value="use.functionalj.maven.list.FuncListTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FuncListTest" />
+        <item itemvalue="JUnit.All in UseFunctionalJMaven" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d005db26-2b4e-4870-a6e2-1698029899ab" name="Default Changelist" comment="" />
+      <created>1625081222616</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625081222616</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1344" height="275" key="GridCell.Tab.0.bottom" timestamp="1625091790975">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1344" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1625091790975" />
+    <state width="1344" height="275" key="GridCell.Tab.0.center" timestamp="1625091790975">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1344" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1625091790975" />
+    <state width="1344" height="275" key="GridCell.Tab.0.left" timestamp="1625091790975">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1344" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1625091790975" />
+    <state width="1344" height="275" key="GridCell.Tab.0.right" timestamp="1625091790975">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1344" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1625091790975" />
+  </component>
+</project>
