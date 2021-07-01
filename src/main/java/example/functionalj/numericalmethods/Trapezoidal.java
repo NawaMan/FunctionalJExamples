@@ -1,6 +1,7 @@
 package example.functionalj.numericalmethods;
 
 import static functionalj.list.FuncList.listOf;
+import static functionalj.list.FuncList.newListBuilder;
 import static functionalj.stream.Step.StartAt;
 import static java.lang.Math.abs;
 import static java.lang.Math.exp;
@@ -12,26 +13,24 @@ import java.util.function.DoubleUnaryOperator;
 
 import org.junit.jupiter.api.Test;
 
-import functionalj.list.FuncList;
-
-class Integration {
+class Trapezoidal {
     
     static interface Func extends DoubleUnaryOperator {}
     
     @Test
     void testTrapezoidalRule() {
+        var function   = (Func) ((x) -> 3 + 2 * pow(x, 2) - pow(x, 3) + pow(2, x) - exp(-x));
         var startX     = -1.0;
         var stopX      = 3.0;
         var actualArea = 18.81838;
-        var logs       = FuncList.<String>newBuilder();
+        
+        var logs       = newListBuilder(String.class);
         for (var segment : listOf(1, 2, 4, 8, 16, 200)) {
-            var stepSize = (stopX - startX)/segment;
-            var function = (Func)((x) -> 3 + 2*pow(x,2) - pow(x,3) + pow(2,x) - exp(-x));
-            
-            var xs    = StartAt(startX).step(stepSize).dropAfter(x -> x >= stopX);
-            var ys    = xs.map   (function);
-            var area  = ys.mapTwo((value1, value2) -> (value1+value2)*stepSize/2).sum();
-            var error = abs((actualArea - area)/actualArea)*100;
+            var stepSize = (stopX - startX) / segment;
+            var xs       = StartAt(startX).step(stepSize).dropAfter(x -> x >= stopX);
+            var ys       = xs.map(function);
+            var area     = ys.mapTwo((value1, value2) -> (value1 + value2) * stepSize / 2).sum();
+            var error    = abs((actualArea - area) / actualArea) * 100;
             logs.add(format("n = %d, I_%d = %f, error = %f%%\n", segment, segment, area, error));
         }
         assertEquals(

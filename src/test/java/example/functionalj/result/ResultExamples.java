@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import functionalj.result.Result;
 
 
-class ResultExample {
+class ResultExamples {
     
     @Test
     void testHandleException() {

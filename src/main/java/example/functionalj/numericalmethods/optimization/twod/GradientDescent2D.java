@@ -4,8 +4,6 @@ import static example.functionalj.numericalmethods.optimization.twod.Iteration.t
 import static functionalj.list.FuncList.iterate;
 import static java.lang.Math.abs;
 
-import java.util.List;
-
 import org.knowm.xchart.QuickChart;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
@@ -87,8 +85,8 @@ public class GradientDescent2D {
         
         System.out.printf("Calculation time: %d ms\n", System.currentTimeMillis() - startTime);
         
-        List<Double> xData = IntFuncList.wholeNumbers(iterations.size()).mapToObj(i -> 1.0*i);
-        List<Double> yData = iterations.map(theIteration.fxy);
+        var xData = IntFuncList.wholeNumbers(iterations.size()).mapToDouble().toArray();
+        var yData = iterations.mapToDouble(theIteration.fxy).toArray();
         
         XYChart chart = QuickChart.getChart("Gradient Descent 2D", "iteration", "f", "f", xData, yData);
         new SwingWrapper<>(chart).displayChart();
